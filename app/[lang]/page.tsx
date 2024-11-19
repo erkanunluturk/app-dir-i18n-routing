@@ -3,6 +3,8 @@ import { Locale } from "../../i18n-config";
 import Counter from "./components/counter";
 import LocaleSwitcher from "./components/locale-switcher";
 
+import SendForm from "./components/form"
+
 export default async function IndexPage(props: {
   params: Promise<{ lang: Locale }>;
 }) {
@@ -20,6 +22,9 @@ export default async function IndexPage(props: {
           {dictionary["server-component"].welcome}
         </p>
         <Counter dictionary={dictionary.counter} />
+        <div style={{ marginTop: "40px" }}>
+          <SendForm dictionary={dictionary} />
+        </div>
       </div>
     </div>
   );
